@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>さかなチャレンジ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header">
+        <div id="score">スコア</div>
+        <div class="timer" id="countdown">00</div>
+    </header>
+    <div class="line" id="line"></div>
+    <div id="sea" class="sea"></div>
+
+
+    <!-- スタート画面 -->
+    <div id="startScreen" class="overlay">
+        <p class="startTitle">さかなチャレンジ</p>
+        <p>泳ぐ漢字に糸を当てて、読みを答えよう</p>
+        <p class="howTo">PC：矢印キー ／ スマホ：画面をなぞる</p>
+        <button class="btn startButton">スタート</button>
+    </div>
+
+    <!-- 結果画面（最初は隠す） -->
+    <div id="resultScreen" class="overlay">
+        <p class="resultTitle">終了！</p>
+        <p class="resultScore">スコア:00</p>
+        <p class="bestScore">最高記録:00</p>
+        <button class="btn resultButton">もう一度</button>
+    </div>
+
+
+
+    <!-- 問題を表示 -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true" id="modal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <h1 class="text-center" id="kanji"></h1>
+                <p class="text-center" id="read"></p>
+                <p class="text-center" id="result"></p>
+                <p class="text-center" id="description"></p>
+                <input type="text" class="form-control" id="text" maxlength="20" autocomplete="off">
+                <button type="button" class="btn" id="btn">確定</button>
+                <button type="button" class="btn" id="next">次へ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="fish-data.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
